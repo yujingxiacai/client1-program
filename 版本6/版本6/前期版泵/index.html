@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="keyword" content="客户内容">
+    <link rel="stylesheet" type="text/css" href="font-al/iconfont.css">
+    <style>
+
+        .clearfix::after{
+            content:'';
+            display: block;
+            clear: both;
+        }
+      h1,h2,h3,h4,h5,h6{
+          margin: 0;
+      }
+
+        <!--头部开始-->
+            *{
+                margin: 0;
+                padding: 0;
+            }
+        body{
+            margin: 0;
+            /*height: 1600px;*/
+        }
+        .header{
+            height: 63px;
+            background:  #151b26;
+
+        }
+        .wrapper{
+            margin: 0 auto;
+            width: 1230px;
+            position: relative;
+        }
+        .header-list {
+            padding: 10px 0;
+        }
+        .header-list li{
+            float: right;
+            height: 39px;
+            line-height: 39px;
+            text-align: center;
+            list-style: none;
+            color: #fffdef;
+            margin-left: 20px;
+            background:#ff0036 ;
+            /*margin-top: 10px;*/
+            padding: 0 10px;
+            border: 1px solid #151b26;
+            border-radius: 12px;
+        }
+        a:link{
+            text-decoration:none;
+
+        }
+        .header-list li a{
+            color: #fffdef;
+        }
+        .wrapper .loge{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #fffdef;
+            font-size: 30px;
+
+        }
+        .wrapper .loge span{
+            color: #ff0036;
+        }
+        /*头部结束*/
+
+
+
+        /*轮播图开始*/
+
+        ul,li{
+            list-style: none;
+            margin: 0;
+        }
+        /*.floatfix {*/
+            /**zoom: 1;*/
+        /*}*/
+        .floatfix:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .slider-contaner{
+            width:100%;
+            /*height: 100px;*/
+            position:absolute;
+            right: 0;
+            left: -40px;
+        }
+        .slider-item + .slider-item{
+            opacity:0;
+        }
+
+        .slider-item{
+            width:100%;
+            /*height: 500px;*/
+            position:absolute;
+            animation-timing-function: ease-out;
+            animation-name:fade;
+            animation-iteration-count: infinite;
+            background-size:149%;
+            background-position: center;
+            /*background-repeat: no-repeat;*/
+        }
+        .focus-container{
+            position:absolute;
+            z-index:7;
+            margin:0 auto;
+            left:0;
+            right:0;
+        }
+
+        .focus-container li{
+            width:10px;
+            height:10px;
+            border-radius:50%;
+            float:left;
+            margin-right:10px;
+            background:#fff;
+        }
+
+        /*焦点圆圈的变换*/
+        .focus-item{
+            width:100%;
+            height:100%;
+            border-radius:inherit;
+            animation-timing-function: ease-out;
+            animation-name:fade;
+            animation-iteration-count: infinite;
+        }
+        .focus-item2,.focus-item3,.focus-item4,.focus-item5{
+            opacity:0;
+        }
+        .focus-container ul{
+            margin-left:48%;
+        }
+        /*设置轮播焦点的位置*/
+        .focus-container{
+            bottom:2%;
+        }
+        /*设置当前图片焦点的颜色*/
+        .focus-item{
+            background:#51B1D9;
+        }
+        /*设置动画，请根据实际需要修改秒数*/
+        .slider-item,.focus-item{
+            animation-duration: 8s;
+        }
+        .slider-item1,.focus-item1{
+            animation-delay: -1s;
+        }
+        .slider-item2,.focus-item2{
+            animation-delay: 3s;
+        }
+        /*.slider-item3,.focus-item3{*/
+            /*animation-delay: 7s;*/
+        /*}*/
+        /*.slider-item4,.focus-item4{*/
+            /*animation-delay: 11s;*/
+        /*}*/
+        /*.slider-item5,.focus-item5{*/
+            /*animation-delay: 15s;*/
+        /*}*/
+        @keyframes fade{
+            0%{
+                opacity:0;
+                z-index:2;
+            }
+
+            10%{
+                opacity:1;
+                z-index: 1;
+            }
+            /*20%{*/
+                /*opacity:1;*/
+                /*z-index:1;*/
+            /*}*/
+            /*50%{*/
+                /*opacity:1;*/
+                /*z-index:1;*/
+            /*}*/
+            /*80%{*/
+                /*opacity:0;*/
+                /*z-index:0;*/
+            /*}*/
+            100%{
+                opacity:0;
+                z-index:0;
+            }
+        }
+        /*设置背景，响应式请利用媒体查询根据断点修改路径*/
+        .slider-item1{
+            background-image:url(img/client-magic.jpg);
+        }
+        .slider-item2{
+            background-image:url(img/client2-magic.jpg);
+        }
+        /*.slider-item3{*/
+            /*background-image:url(img/lunbotu3.jpg);*/
+        /*}*/
+        /*.slider-item4{*/
+            /*background-image:url(img/lunbotu4.jpg);*/
+        /*}*/
+        /*.slider-item5{*/
+            /*background-image:url(img/lunbotu5.png);*/
+        /*}*/
+        /*设置图片的高度，请根据具体需要修改百分比，响应式及时修改此值*/
+        .slider,.slider-item{
+            padding-bottom:600px;
+        }
+
+
+        /*轮播图结束*/
+
+
+
+
+
+        /*side QQ connect开始*/
+        .side-qq{
+            position: fixed;
+            top: 160px;
+            right: 0;
+            opacity: .5;
+            height: 50px;
+            width: 60px;
+            /*font-weight: bolder;*/
+            font-size: 20px;
+            /*background: #eaffea;*/
+            padding: 0 10px;
+            z-index: 999;
+
+        }
+
+        .side-qq .qq-code{
+            position: absolute;
+            top: 105px;
+            right: 0px;
+            width: 100px;
+            height: 200px;
+            background: #795da3;
+            box-shadow: 1px 1px ;
+            opacity: 1;
+
+        }
+
+        .qq-code img{
+
+            width: 100px;
+            height: 100px;
+        }
+
+        .qq-code .qq-chat,.qq-code .firend-add{
+            width: 100px;
+            height: 45px;
+            text-align: center;
+            line-height: 45px;
+            font-size: 12px;
+        }
+        .qq-code i{
+            font-size: 20px;
+            vertical-align:middle;
+            /*vertical-align是设置在被参照物属性中的，使他并列的元素，也就是要惨遭它的元素能够想对他垂直居中！！！*/
+        }
+
+
+        #qq-text p,#qq-text span{
+            height: 20px;
+            width: 100px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 15px;
+        }
+        .side-qq .header-qq{
+            position: fixed;
+            width: 100px;
+            height: 60px;
+           right: 3px;
+        }
+        /*side QQ connect结束*/
+
+
+        /*container开始*/
+        li{
+            list-style:none;
+
+        }
+        .container .wrapper .left-side-title,.container .wrapper .mid-zhengzhi-news,.container .wrapper .right-school-news{
+            float: left;
+        }
+        .container .title-side li{
+            height: 45px;
+            width: 160px;
+            line-height: 45px;
+            color: aliceblue;
+            background:#51B1D9 ;
+            margin-bottom: 10px;
+            text-align: center;
+            padding: 0;
+            font-size:20px;
+        }
+        .container .title-side li:nth-child(2n){
+            background: #cccccc;
+        }
+        .container .mid-zhengzhi-news{
+            margin-left: 120px;
+        }
+        .container .mid-zhengzhi-news h1,.container .right-school-news h1{
+            font-weight: bold;
+            margin: 0 auto;
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+        }
+        .container .mid-zhengzhi-news .mid li,.container .right-school-news .mid li{
+            color: #fffdef;
+            background: #cccccc;
+            text-align: center;
+            margin-bottom: 20px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+        }
+        .container img{
+            width: 456px;
+            height: 323px;
+        }
+        .container .right-school-news{
+            margin-left: 120px;
+        }
+        
+
+        /*container结束*/
+
+
+
+        /*footer开始*/
+        /*footer开始*/
+        .footer{
+            width: 100%;
+            height: 216px;
+            background-color: #074473;
+        }
+        .footer .connect-data {
+            height: 56px;
+        }
+        .footer .connect-data .logo{
+            width: 780px;
+            height: 56px;
+            padding: 0 15px;
+            float: left;
+        }
+        .footer .connect-data .logo .renzheng{
+            width: 750px;
+            height: 36px;
+            padding-top: 20px;
+
+        }
+        .footer .connect-data .logo .renzheng img{
+            width: 32px;
+            height: 36px;
+            margin-right: 12px;
+        }
+
+        .footer .connect-data  .miaoshu{
+            float: right;
+            width: 360px;
+            height: 56px;
+            padding: 30px 15px;
+            color: #fff;
+        }
+        .footer .connect-data .miaoshu p{
+            width: 240px;
+            height: 17px;
+            margin: 0;
+            font-size: 12px;
+        }
+        .footer a{
+            text-decoration: none;
+            color: #919399;
+            font-size: 12px;
+            margin: 0;
+            width: 48px;
+            height: 16px;
+            line-height: 16px;
+            text-align: center;
+        }
+        .footer .connect-data2{
+            height: 84px;
+            padding-top: 40px;
+        }
+        .footer .connect-data2 p{
+            height: 28px;
+            padding:0 16px;
+            margin: 0;
+            font-size: 12px;
+            color: #919399;
+        }
+
+        /*footer结束*/
+        /*footer结束*/
+        
+        /*内容区补充*/
+        .container .title-content{
+            height: 60px;
+            line-height: 60px;
+            background: #f2f2f2;
+            
+        }
+        .title-content h1{
+            color: #800000 ;
+            padding-left:40px ;
+        }
+        .container .title-content h1, .container .title-content p{
+            float: left;
+            margin: 0;
+        }
+        .container .wrapper{
+            background: #f2f2f2;
+            height: 1244px;
+        }
+        .container .title-content a{
+            float: right;
+            padding-right: 20px;
+            color:  #737373;
+        }
+        .main-content{
+            height: 350px;
+        }
+
+        .main-content .content-list{
+            height: 350px;
+            /*margin-bottom: 30px;*/
+        }
+        .main-content .content-list .small-title{
+            height: 35px;
+            background: #75a3a3 ;
+            line-height: 35px;
+            color:  #f2f2f2;
+
+        }
+        .main-content .content-list>li{
+            float: left;
+            width: 383px;
+            margin-right: 20px;
+        }
+        .content-list .right-c{
+            margin-right: 0!important;
+        }
+        .main-content .small-title h3{
+            float: left;
+        }
+        .main-content .small-title a{
+            float: right;
+            padding-right: 10px;
+            color: #f2f2f2;
+        }
+        .left-c ul,.mid-c ul,.right-c ul{
+            padding-left: 21px;
+        }
+        .main-content .left-c li, .mid-c li, .right-c li{
+            /*list-style: square;*/
+            list-style-type: disc;
+            margin-top: 10px;
+            color: #737373;
+
+        }
+       .first1{
+            background:#cc8800 !important;
+        }
+        .first2{
+            background:  #b2b300!important;
+        }
+        .first3{
+            background:  #ff9999!important;
+        }
+
+        /*内容区补充*/
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="wrapper">
+        <div class="loge"><span>logo</span>区域</div>
+    <ul class="header-list">
+        <li id="list5"><a href="">联系我们</a> </li>
+        <li id="list4"><a href="">团队老师</a> </li>
+        <li id="list3"><a href="">质量说明</a> </li>
+         <li id="list2"><a href="">服务项目</a> </li>
+        <li id="list1"><a href="index.html">首页</a> </li>
+    </ul>
+</div></div>
+<div class="banner-main clearfix" style="height:700px;" >
+    <div class="bg-img clearfix" >
+        <section class="slider-contaner" >
+            <ul class="slider">
+                <li class="slider-item slider-item1"></li>
+                <li class="slider-item slider-item2"></li>
+                <!--<li class="slider-item slider-item3"></li>-->
+                <!--<li class="slider-item slider-item4"></li>-->
+                <!--<li class="slider-item slider-item5"></li>-->
+            </ul>
+            <div class="focus-container">
+                <ul class="floatfix">
+                    <li><div class="focus-item focus-item1"></div></li>
+                    <li><div class="focus-item focus-item2"></div></li>
+                    <!--<li><div class="focus-item focus-item3"></div></li>-->
+                    <!--<li><div class="focus-item focus-item4"></div></li>-->
+                    <!--<li><div class="focus-item focus-item5"></div></li>-->
+
+                </ul>
+            </div>
+        </section>
+
+
+    </div>
+</div>
+<div class="side-qq">
+    <div id="qq-text">
+        <div class="header-qq">
+            <p>和我聊</p>
+            <p>联系电话:</p>
+            <p>136-XXX-XXX</p>
+        </div>
+        <div class="qq-connect">
+            <div class="qq-code">
+                <div class="qq-code-img">
+                    <img src="img/q-code.png">
+                </div>
+
+                <div class="qq-chat">
+                    <a href="http://wpa.qq.com/msgrd?v=3&uin=845315522&site=qq&menu=yes"><i class="iconfont icon-QQ"></i>QQ在线聊天</a>
+                </div>
+
+                <div class="firend-add">
+                    <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=845315522&website=www.oicqzone.com"><i class="iconfont icon-qq2"></i>添加QQ好友</a>
+                    <!--上面的原理就是qq号为被添加的雇主QQ号，链接直接出发浏览者的电脑上面的qq，然后正常添加-->
+
+
+                    <!--<a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=878187355&fuin=2539713003&website=www.oicqzone.com"></a>-->
+                    <!--fuin是客户，uin是被加好友的网页雇主。通过动态获取信息实现添加好友的QQ号对接-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="qq-code">-->
+        <!--<div class="qq-code-img">-->
+            <!--<img src="img/q-code.png">-->
+        <!--</div>-->
+        <!---->
+        <!--<div class="qq-chat">-->
+            <!--<a href="http://wpa.qq.com/msgrd?v=3&uin=2539713003&site=qq&menu=yes"><i class="iconfont icon-QQ"></i>QQ在线聊天</a>-->
+        <!--</div>-->
+        <!---->
+        <!--<div class="firend-add">-->
+            <!--<a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=2539713003&website=www.oicqzone.com"><i class="iconfont icon-qq2"></i>添加QQ好友</a>-->
+            <!--&lt;!&ndash;上面的原理就是qq号为被添加的雇主QQ号，链接直接出发浏览者的电脑上面的qq，然后正常添加&ndash;&gt;-->
+
+
+            <!--&lt;!&ndash;<a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=878187355&fuin=2539713003&website=www.oicqzone.com"></a>&ndash;&gt;-->
+            <!--&lt;!&ndash;fuin是客户，uin是被加好友的网页雇主。通过动态获取信息实现添加好友的QQ号对接&ndash;&gt;-->
+        <!--</div>-->
+    <!--</div>-->
+</div>
+
+<div class="container clearfix">
+    <div class="wrapper">
+
+        <div class="title-content clearfix">
+        <h1 id="ti">成功案例</h1>
+        <div style="height: 40px; width: 3px;background: #cccccc;float: left;margin:10px 10px"></div>
+        <p style="color: #737373;font-weight: bold">成百上千的成功案例，消除您的顾虑</p>
+        <a href="#ti">查看更多+</a>
+         </div>
+        <div class="main-content  ">
+            <ul class="content-list ">
+                <li class="left-c">
+                    <div class="small-title" id="mc"><h3>楹联对联类</h3> <a href="#mc">更多+</a></div>
+                    <ul >
+                        <li>谐音对联</li>
+                        <li>对联</li>
+                        <li>语文对联秒用教学论文</li>
+                        <li>春节对联</li>
+                    </ul>
+                </li>
+                <li class="mid-c">
+                    <div class="small-title"><h3>体会报告类</h3> <a href="#mc">更多+</a></div>
+                    <ul>
+                        <li>端午随笔：印象端午</li>
+                        <li>生活服务公司员工心得体会</li>
+                        <li>反腐倡廉学习心得</li>
+                        <li>学习《魏书生六步教学法》有感</li>
+                    </ul>
+                </li>
+                <li class="right-c">
+                    <div class="small-title"><h3>小品相声类</h3> <a href="#mc">更多+</a></div>
+                    <ul>
+                        <li>医患关系相声《看病的烦恼》</li>
+                        <li>相声：《矛盾工程师》</li>
+                        <li>相声：《21世纪的孩子呀！》</li>
+                        <li>小品：《说钱》</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="main-content ">
+            <ul class="content-list  ">
+                <li class="left-c">
+                    <div class="small-title first1" id="mc1"><h3>宣传文案类</h3> <a href="#mc1">更多+</a></div>
+                    <ul >
+                        <li>左岸咖啡：一个人慢慢等待打烊</li>
+                        <li>崇学苑：秋天游完泳，喝完鱼汤好舒服</li>
+                        <li>伊利纯牛奶：自在舒适的环境</li>
+                        <li>波斯灯：拥抱世界</li>
+                    </ul>
+                </li>
+                <li class="mid-c">
+                    <div class="small-title first1"><h3>发言辞职类</h3> <a href="#mc1">更多+</a></div>
+                    <ul>
+                        <li>财政局道德讲堂启动仪式讲话</li>
+                        <li>审计见面会发言</li>
+                        <li>公司员工（采购部门）辞职信</li>
+                        <li>在单位离职告别会上讲话</li>
+                    </ul>
+                </li>
+                <li class="right-c">
+                    <div class="small-title first1"><h3>影视策划</h3> <a href="#mc1">更多+</a></div>
+                    <ul>
+                        <li>“奏响教育最强音”专题 分镜头脚本</li>
+                        <li>电视栏目策划方案</li>
+                        <li>《新闻现场》电视栏目策划书</li>
+                        <li>《民生时空》节目策划案</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="main-content ">
+            <ul class="content-list ">
+                <li class="left-c">
+                    <div class="small-title first2" id="mc2"><h3>科幻悬疑类</h3> <a href="#mc2">更多+</a></div>
+                    <ul >
+                        <li>夜杀</li>
+                        <li>老城记事</li>
+                        <li>湘西蛊事</li>
+                        <li>酷爱红塔山</li>
+                    </ul>
+                </li>
+                <li class="mid-c">
+                    <div class="small-title first2"><h3>项目科研</h3> <a href="#mc2">更多+</a></div>
+                    <ul>
+                        <li>养生保健项目可行性研究报告</li>
+                        <li>铜杆项目可行性分析报告</li>
+                        <li>外墙涂料项目可行性分析报告</li>
+                        <li>威市格宜镇sdfasfasd</li>
+                    </ul>
+                </li>
+                <li class="right-c">
+                    <div class="small-title first2"><h3>楹联对联类</h3> <a href="#mc2">更多+</a></div>
+                    <ul>
+                        <li>谐音对联</li>
+                        <li>对联</li>
+                        <li>语文对联秒用教学论文</li>
+                        <li>春节对联</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="main-content  ">
+            <ul class="content-list ">
+                <li class="left-c">
+                    <div class="small-title first3" id="mc3"><h3>楹联对联类</h3> <a href="#mc3">更多+</a></div>
+
+                </li>
+                <li class="mid-c">
+                    <div class="small-title first3"><h3>楹联对联类</h3> <a href="#mc3">更多+</a></div>
+
+                </li>
+                <li class="right-c">
+                    <div class="small-title first3"><h3>楹联对联类</h3> <a href="#mc3">更多+</a></div>
+
+                </li>
+            </ul>
+        </div>
+
+
+    
+    </div>
+</div>
+
+
+<div class="footer">
+    <div class="wrapper">
+        <div class="connect-data">
+            <div class="logo">
+                <p class="renzheng">
+                    <img src="img/logosmall.png" alt="">
+                    <img src="img/logosmall.png" alt="">
+                    <img src="img/logosmall.png" alt="">
+                    <img src="img/logosmall.png" alt="">
+                    <img src="img/logosmall.png" alt="">
+                    <img src="img/logosmall.png" alt="">
+                </p>
+            </div>
+            <div class="miaoshu">
+                <p>服务项目</p>
+                <p class="gn">
+                    <a href="">论文撰写.</a>
+                    <a href="">essay编译.</a>
+                    <a href="">论文发表.</a>
+                    <a href="">期刊投稿</a>
+                </p>
+            </div>
+        </div>
+        <div class="connect-data2">
+            <p>
+                合作申请： QQ:845315522
+            </p>
+            <p>
+                联系地址： XXXXXX
+            </p>
+            <p>
+                Copyright © 2017-2018 XXX版权
+
+            </p>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
