@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="keyword" content="客户内容">
+    <link rel="stylesheet" type="text/css" href="font-al/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="kehu.css">
+    <style>
+
+        .clearfix::after{
+            content:'';
+            display: block;
+            clear: both;
+        }
+      h1,h2,h3,h4,h5,h6{
+          margin: 0;
+      }
+
+        <!--头部开始-->
+            *{
+                margin: 0;
+                padding: 0;
+            }
+        body{
+            margin: 0;
+            /*height: 1600px;*/
+        }
+        .header{
+            height: 63px;
+            background:  #151b26;
+
+        }
+        .wrapper{
+            margin: 0 auto;
+            width: 1230px;
+            position: relative;
+        }
+        .header-list {
+            padding: 10px 0;
+        }
+        .header-list li{
+            float: right;
+            height: 39px;
+            line-height: 39px;
+            text-align: center;
+            list-style: none;
+            color: #fffdef;
+            margin-left: 20px;
+            background:#ff0036 ;
+            /*margin-top: 10px;*/
+            padding: 0 10px;
+            border: 1px solid #151b26;
+            border-radius: 12px;
+        }
+        a:link{
+            text-decoration:none;
+
+        }
+        .header-list li a{
+            color: #fffdef;
+        }
+        .wrapper .loge{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #fffdef;
+            font-size: 30px;
+
+        }
+        .wrapper .loge span{
+            color: #ff0036;
+        }
+        /*头部结束*/
+
+
+
+        /*轮播图开始*/
+
+        ul,li{
+            list-style: none;
+            margin: 0;
+        }
+        /*.floatfix {*/
+            /**zoom: 1;*/
+        /*}*/
+        .floatfix:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .slider-contaner{
+            width:100%;
+            /*height: 100px;*/
+            position:absolute;
+            right: 0;
+            left: -40px;
+        }
+        .slider-item + .slider-item{
+            opacity:0;
+        }
+
+        .slider-item{
+            width:100%;
+            /*height: 500px;*/
+            position:absolute;
+            animation-timing-function: ease-out;
+            animation-name:fade;
+            animation-iteration-count: infinite;
+            background-size:149%;
+            background-position: center;
+            /*background-repeat: no-repeat;*/
+        }
+        .focus-container{
+            position:absolute;
+            z-index:7;
+            margin:0 auto;
+            left:0;
+            right:0;
+        }
+
+        .focus-container li{
+            width:10px;
+            height:10px;
+            border-radius:50%;
+            float:left;
+            margin-right:10px;
+            background:#fff;
+        }
+
+        /*焦点圆圈的变换*/
+        .focus-item{
+            width:100%;
+            height:100%;
+            border-radius:inherit;
+            animation-timing-function: ease-out;
+            animation-name:fade;
+            animation-iteration-count: infinite;
+        }
+        .focus-item2,.focus-item3,.focus-item4,.focus-item5{
+            opacity:0;
+        }
+        .focus-container ul{
+            margin-left:48%;
+        }
+        /*设置轮播焦点的位置*/
+        .focus-container{
+            bottom:2%;
+        }
+        /*设置当前图片焦点的颜色*/
+        .focus-item{
+            background:#51B1D9;
+        }
+        /*设置动画，请根据实际需要修改秒数*/
+        .slider-item,.focus-item{
+            animation-duration: 8s;
+        }
+        .slider-item1,.focus-item1{
+            animation-delay: -1s;
+        }
+        .slider-item2,.focus-item2{
+            animation-delay: 3s;
+        }
+        /*.slider-item3,.focus-item3{*/
+            /*animation-delay: 7s;*/
+        /*}*/
+        /*.slider-item4,.focus-item4{*/
+            /*animation-delay: 11s;*/
+        /*}*/
+        /*.slider-item5,.focus-item5{*/
+            /*animation-delay: 15s;*/
+        /*}*/
+        @keyframes fade{
+            0%{
+                opacity:0;
+                z-index:2;
+            }
+
+            10%{
+                opacity:1;
+                z-index: 1;
+            }
+            /*20%{*/
+                /*opacity:1;*/
+                /*z-index:1;*/
+            /*}*/
+            /*50%{*/
+                /*opacity:1;*/
+                /*z-index:1;*/
+            /*}*/
+            /*80%{*/
+                /*opacity:0;*/
+                /*z-index:0;*/
+            /*}*/
+            100%{
+                opacity:0;
+                z-index:0;
+            }
+        }
+        /*设置背景，响应式请利用媒体查询根据断点修改路径*/
+        .slider-item1{
+            background-image:url(img/client-magic.jpg);
+        }
+        .slider-item2{
+            background-image:url(img/client11.jpg);
+        }
+        /*.slider-item3{*/
+            /*background-image:url(img/lunbotu3.jpg);*/
+        /*}*/
+        /*.slider-item4{*/
+            /*background-image:url(img/lunbotu4.jpg);*/
+        /*}*/
+        /*.slider-item5{*/
+            /*background-image:url(img/lunbotu5.png);*/
+        /*}*/
+        /*设置图片的高度，请根据具体需要修改百分比，响应式及时修改此值*/
+        .slider,.slider-item{
+            padding-bottom:600px;
+        }
+
+
+        /*轮播图结束*/
+
+
+
+
+
+        /*side QQ connect开始*/
+        .side-qq{
+            position: fixed;
+            top: 160px;
+            right: 0;
+            opacity: .5;
+            height: 50px;
+            width: 60px;
+            /*font-weight: bolder;*/
+            font-size: 20px;
+            /*background: #eaffea;*/
+            padding: 0 10px;
+            z-index: 999;
+
+        }
+
+        .side-qq .qq-code{
+            position: absolute;
+            top: 105px;
+            right: 0px;
+            width: 100px;
+            height: 200px;
+            background: #795da3;
+            box-shadow: 1px 1px ;
+            opacity: 1;
+
+        }
+
+        .qq-code img{
+
+            width: 100px;
+            height: 100px;
+        }
+
+        .qq-code .qq-chat,.qq-code .firend-add{
+            width: 100px;
+            height: 45px;
+            text-align: center;
+            line-height: 45px;
+            font-size: 12px;
+        }
+        .qq-code i{
+            font-size: 20px;
+            vertical-align:middle;
+            /*vertical-align是设置在被参照物属性中的，使他并列的元素，也就是要惨遭它的元素能够想对他垂直居中！！！*/
+        }
+
+
+        #qq-text p,#qq-text span{
+            height: 20px;
+            width: 100px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 15px;
+        }
+        .side-qq .header-qq{
+            position: fixed;
+            width: 100px;
+            height: 60px;
+           right: 3px;
+        }
+        /*side QQ connect结束*/
+
+
+        /*container开始*/
+        li{
+            list-style:none;
+
+        }
+        .container .wrapper .left-side-title,.container .wrapper .mid-zhengzhi-news,.container .wrapper .right-school-news{
+            float: left;
+        }
+        .container .title-side li{
+            height: 45px;
+            width: 160px;
+            line-height: 45px;
+            color: aliceblue;
+            background:#51B1D9 ;
+            margin-bottom: 10px;
+            text-align: center;
+            padding: 0;
+            font-size:20px;
+        }
+        .container .title-side li:nth-child(2n){
+            background: #cccccc;
+        }
+        .container .mid-zhengzhi-news{
+            margin-left: 120px;
+        }
+        .container .mid-zhengzhi-news h1,.container .right-school-news h1{
+            font-weight: bold;
+            margin: 0 auto;
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+        }
+        .container .mid-zhengzhi-news .mid li,.container .right-school-news .mid li{
+            color: #fffdef;
+            background: #cccccc;
+            text-align: center;
+            margin-bottom: 20px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+        }
+        .container img{
+            width: 456px;
+            height: 323px;
+        }
+        .container .right-school-news{
+            margin-left: 120px;
+        }
+        
+
+        /*container结束*/
+
+
+
+        /*footer开始*/
+        /*footer开始*/
+        .footer{
+            width: 100%;
+            /*height: 216px;*/
+            background-color: #074473;
+            position: relative;
+            bottom: 0;
+        }
+        .footer .connect-data {
+            height: 56px;
+        }
+        .footer .connect-data .logo{
+            width: 780px;
+            height: 56px;
+            padding: 0 15px;
+            float: left;
+        }
+        .footer .connect-data .logo .renzheng{
+            width: 750px;
+            height: 36px;
+            padding-top: 20px;
+
+        }
+        .footer .connect-data .logo .renzheng img{
+            width: 32px;
+            height: 36px;
+            margin-right: 12px;
+        }
+
+        .footer .connect-data  .miaoshu{
+            float: right;
+            width: 360px;
+            height: 56px;
+            padding: 30px 15px;
+            color: #fff;
+        }
+        .footer .connect-data .miaoshu p{
+            width: 240px;
+            height: 17px;
+            margin: 0;
+            font-size: 12px;
+        }
+        .footer a{
+            text-decoration: none;
+            color: #919399;
+            font-size: 12px;
+            margin: 0;
+            width: 48px;
+            height: 16px;
+            line-height: 16px;
+            text-align: center;
+        }
+        .footer .connect-data2{
+            height: 84px;
+            padding-top: 40px;
+        }
+        .footer .connect-data2 p{
+            height: 28px;
+            padding:0 16px;
+            margin: 0;
+            font-size: 12px;
+            color: #919399;
+        }
+
+        /*footer结束*/
+        /*footer结束*/
+        
+        /*内容区补充*/
+        .container .title-content{
+            height: 60px;
+            line-height: 60px;
+            background: #f2f2f2;
+            
+        }
+        .title-content h1{
+            color: #800000 ;
+            padding-left:40px ;
+        }
+        .container .title-content h1, .container .title-content p{
+            float: left;
+            margin: 0;
+        }
+        .container .wrapper{
+            background: #f2f2f2;
+            height: 1244px;
+        }
+        .container .title-content a{
+            float: right;
+            padding-right: 20px;
+            color:  #737373;
+        }
+        .main-content{
+            height: 350px;
+        }
+
+        .main-content .content-list{
+            height: 350px;
+            /*margin-bottom: 30px;*/
+        }
+        .main-content .content-list .small-title{
+            height: 35px;
+            background: #75a3a3 ;
+            line-height: 35px;
+            color:  #f2f2f2;
+
+        }
+        .main-content .content-list>li{
+            float: left;
+            width: 383px;
+            margin-right: 20px;
+        }
+        .content-list .right-c{
+            margin-right: 0!important;
+        }
+        .main-content .small-title h3{
+            float: left;
+        }
+        .main-content .small-title a{
+            float: right;
+            padding-right: 10px;
+            color: #f2f2f2;
+        }
+        .left-c ul,.mid-c ul,.right-c ul{
+            padding-left: 21px;
+        }
+        .main-content .left-c li, .mid-c li, .right-c li{
+            /*list-style: square;*/
+            list-style-type: disc;
+            margin-top: 10px;
+            color: #737373;
+
+        }
+       .first1{
+            background:#cc8800 !important;
+        }
+        .first2{
+            background:  #b2b300!important;
+        }
+        .first3{
+            background:  #ff9999!important;
+        }
+
+        /*内容区补充*/
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="wrapper">
+        <div class="loge"><span>logo</span>区域</div>
+    <ul class="header-list">
+        <li id="list5"><a href="#connect">联系我们</a> </li>
+        <li id="list4"><a href="#team-teacher">团队老师</a> </li>
+        <li id="list3"><a href="#about-us">关于我们</a> </li>
+         <li id="list2"><a href="#sever">服务项目</a> </li>
+        <li id="list1"><a href="index.html">首页</a> </li>
+    </ul>
+</div></div>
+<div class="banner-main clearfix" style="height:700px;" >
+    <div class="bg-img clearfix" >
+        <section class="slider-contaner" >
+            <ul class="slider">
+                <li class="slider-item slider-item1"></li>
+                <li class="slider-item slider-item2"></li>
+                <!--<li class="slider-item slider-item3"></li>-->
+                <!--<li class="slider-item slider-item4"></li>-->
+                <!--<li class="slider-item slider-item5"></li>-->
+            </ul>
+            <div class="focus-container">
+                <ul class="floatfix">
+                    <li><div class="focus-item focus-item1"></div></li>
+                    <li><div class="focus-item focus-item2"></div></li>
+                    <!--<li><div class="focus-item focus-item3"></div></li>-->
+                    <!--<li><div class="focus-item focus-item4"></div></li>-->
+                    <!--<li><div class="focus-item focus-item5"></div></li>-->
+
+                </ul>
+            </div>
+        </section>
+
+
+    </div>
+</div>
+<div class="side-qq">
+    <div id="qq-text">
+        <div class="header-qq">
+            <p>和我聊</p>
+            <p>联系电话:</p>
+            <p>136-XXX-XXX</p>
+        </div>
+        <div class="qq-connect">
+            <div class="qq-code">
+                <div class="qq-code-img">
+                    <img src="img/q-code.png">
+                </div>
+
+                <div class="qq-chat">
+                    <a href="http://wpa.qq.com/msgrd?v=3&uin=845315522&site=qq&menu=yes"><i class="iconfont icon-QQ"></i>QQ在线聊天</a>
+                </div>
+
+                <div class="firend-add">
+                    <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=845315522&website=www.oicqzone.com"><i class="iconfont icon-qq2"></i>添加QQ好友</a>
+                    <!--上面的原理就是qq号为被添加的雇主QQ号，链接直接出发浏览者的电脑上面的qq，然后正常添加-->
+
+
+                    <!--<a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=878187355&fuin=2539713003&website=www.oicqzone.com"></a>-->
+                    <!--fuin是客户，uin是被加好友的网页雇主。通过动态获取信息实现添加好友的QQ号对接-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="qq-code">-->
+        <!--<div class="qq-code-img">-->
+            <!--<img src="img/q-code.png">-->
+        <!--</div>-->
+        <!---->
+        <!--<div class="qq-chat">-->
+            <!--<a href="http://wpa.qq.com/msgrd?v=3&uin=2539713003&site=qq&menu=yes"><i class="iconfont icon-QQ"></i>QQ在线聊天</a>-->
+        <!--</div>-->
+        <!---->
+        <!--<div class="firend-add">-->
+            <!--<a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=2539713003&website=www.oicqzone.com"><i class="iconfont icon-qq2"></i>添加QQ好友</a>-->
+            <!--&lt;!&ndash;上面的原理就是qq号为被添加的雇主QQ号，链接直接出发浏览者的电脑上面的qq，然后正常添加&ndash;&gt;-->
+
+
+            <!--&lt;!&ndash;<a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=878187355&fuin=2539713003&website=www.oicqzone.com"></a>&ndash;&gt;-->
+            <!--&lt;!&ndash;fuin是客户，uin是被加好友的网页雇主。通过动态获取信息实现添加好友的QQ号对接&ndash;&gt;-->
+        <!--</div>-->
+    <!--</div>-->
+</div>
+
+<div class="container clearfix">
+    <div class="wrapper">
+
+        <div class="title-content clearfix">
+        <h1 id="ti">成功案例</h1>
+        <div style="height: 40px; width: 3px;background: #cccccc;float: left;margin:10px 10px"></div>
+        <p style="color: #737373;font-weight: bold">成百上千的成功案例，消除您的顾虑</p>
+        <a href="#ti">查看更多+</a>
+         </div>
+        <div class="main-content  ">
+            <ul class="content-list ">
+                <li class="left-c">
+                    <div class="small-title" id="mc"><h3>楹联对联类</h3> <a href="#mc">更多+</a></div>
+                    <ul >
+                        <li>谐音对联</li>
+                        <li>对联</li>
+                        <li>语文对联秒用教学论文</li>
+                        <li>春节对联</li>
+                    </ul>
+                </li>
+                <li class="mid-c">
+                    <div class="small-title"><h3>体会报告类</h3> <a href="#mc">更多+</a></div>
+                    <ul>
+                        <li>端午随笔：印象端午</li>
+                        <li>生活服务公司员工心得体会</li>
+                        <li>反腐倡廉学习心得</li>
+                        <li>学习《魏书生六步教学法》有感</li>
+                    </ul>
+                </li>
+                <li class="right-c">
+                    <div class="small-title"><h3>小品相声类</h3> <a href="#mc">更多+</a></div>
+                    <ul>
+                        <li>医患关系相声《看病的烦恼》</li>
+                        <li>相声：《矛盾工程师》</li>
+                        <li>相声：《21世纪的孩子呀！》</li>
+                        <li>小品：《说钱》</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="main-content ">
+            <ul class="content-list  ">
+                <li class="left-c">
+                    <div class="small-title first1" id="mc1"><h3>宣传文案类</h3> <a href="#mc1">更多+</a></div>
+                    <ul >
+                        <li>左岸咖啡：一个人慢慢等待打烊</li>
+                        <li>崇学苑：秋天游完泳，喝完鱼汤好舒服</li>
+                        <li>伊利纯牛奶：自在舒适的环境</li>
+                        <li>波斯灯：拥抱世界</li>
+                    </ul>
+                </li>
+                <li class="mid-c">
+                    <div class="small-title first1"><h3>发言辞职类</h3> <a href="#mc1">更多+</a></div>
+                    <ul>
+                        <li>财政局道德讲堂启动仪式讲话</li>
+                        <li>审计见面会发言</li>
+                        <li>公司员工（采购部门）辞职信</li>
+                        <li>在单位离职告别会上讲话</li>
+                    </ul>
+                </li>
+                <li class="right-c">
+                    <div class="small-title first1"><h3>影视策划</h3> <a href="#mc1">更多+</a></div>
+                    <ul>
+                        <li>“奏响教育最强音”专题 分镜头脚本</li>
+                        <li>电视栏目策划方案</li>
+                        <li>《新闻现场》电视栏目策划书</li>
+                        <li>《民生时空》节目策划案</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="main-content ">
+            <ul class="content-list ">
+                <li class="left-c">
+                    <div class="small-title first2" id="mc2"><h3>科幻悬疑类</h3> <a href="#mc2">更多+</a></div>
+                    <ul >
+                        <li>夜杀</li>
+                        <li>老城记事</li>
+                        <li>湘西蛊事</li>
+                        <li>酷爱红塔山</li>
+                    </ul>
+                </li>
+                <li class="mid-c">
+                    <div class="small-title first2"><h3>项目科研</h3> <a href="#mc2">更多+</a></div>
+                    <ul>
+                        <li>养生保健项目可行性研究报告</li>
+                        <li>铜杆项目可行性分析报告</li>
+                        <li>外墙涂料项目可行性分析报告</li>
+                        <li>威市格宜镇sdfasfasd</li>
+                    </ul>
+                </li>
+                <li class="right-c">
+                    <div class="small-title first2"><h3>楹联对联类</h3> <a href="#mc2">更多+</a></div>
+                    <ul>
+                        <li>谐音对联</li>
+                        <li>对联</li>
+                        <li>语文对联秒用教学论文</li>
+                        <li>春节对联</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="main-content  ">
+            <ul class="content-list ">
+                <li class="left-c">
+                    <div class="small-title first3" id="mc3"><h3>楹联对联类</h3> <a href="#mc3">更多+</a></div>
+
+                </li>
+                <li class="mid-c">
+                    <div class="small-title first3"><h3>楹联对联类</h3> <a href="#mc3">更多+</a></div>
+
+                </li>
+                <li class="right-c">
+                    <div class="small-title first3"><h3>楹联对联类</h3> <a href="#mc3">更多+</a></div>
+
+                </li>
+            </ul>
+        </div>
+
+
+    
+    </div>
+</div>
+
+<div class="wrapper">
+    <div class="about-us">
+        <div class="about-title" id="about-us">
+            <h1>About us&nbsp;九鼎文化传媒</h1>
+            <div style="width: 300px;height: 2px;background: #cccccc;margin: 20px auto;"></div>
+            <p class="about-small-title">九鼎文化传媒专注论文撰写与发表</p>
+        </div>
+
+        <p class="main-about-us">
+            九鼎文化传媒专注论文撰写与发表，创建于2013年11月18日，立足于名校，
+            面向全国，秉持诚信为本、质量第一的服务理念，发挥独特优势,树立行业品牌，
+            已迅速成为全国论文撰写和发表行业的中坚力量。本撰写论文网拥有众多硕士研究生、
+            博士研究生，及各行业专家、学者、教授等专业撰写论文人士，凭借强大的人力资源和丰富的实践经历，
+            本着客户利益至上的原则，以质量第一，服务第一，信誉第一的宗旨，打造了一个以撰写与发表论文服务为主体的全国性专业网站。
+            为您提供精湛、快速、专业、全面的撰写和发表论文 服务。现已撰写各类文章上万篇，在国家级核心、国家级、省级刊物上发表各类论文上千篇，
+            以自己诚信和实力赢得了广大客户的信任。在今后的日子里，我们将更加勤奋工作，以最热诚、最优质的服务，助您们一臂之力，为您们的事业锦上添花。
+        </p>
+           <p class="main-about-us"> 九鼎文化传媒写手团目前全职工作人员30余名,名校论文专业指导教师10余名,其中教授3名,硕博专业论文执笔作者320余名（每年都在扩展中）。</p>
+           <p class="main-about-us"> 数年营业至今,共完成本科论文6000余篇,硕士论文2000余篇,博士论文20余篇,职称论文4000余篇,留学论文1000余篇,英语论文翻译700余篇,毕业通过率达100%,论文发表通过率达99%。</p>
+            <p class="main-about-us">目前主要提供：专科毕业论文撰写、本科毕业论文撰写、硕士毕业论文撰写、留学生毕业论文撰写、职称论文撰写、论文发表、外文翻译等各专业论文撰写服务。</p>
+            <p class="main-about-us">九鼎文化传媒坚信“质量求生存,信誉求发展”。只有“真心真心“做到了“全心全意”,方方面面的细节都为顾客考虑,顾客才会成为忠诚的回头客。</p>
+            <p class="main-about-us">九鼎文化传媒的论文特点：高质原创,独创性强；观点新颖,学术性强；格式规范,可读性强；高效快速,专业性强</p>
+            <p class="main-about-us">九鼎文化传媒郑重承诺凡在本站撰写论文一律保证高质量和原创,售后服务一律免费,否则一律退款！</p>
+
+    </div>
+
+
+
+
+
+</div>
+
+
+<div class="kehu kehu-bg our-team" id="team-teacher">
+    <div class="wrapper">
+
+        <section class="teacher-school">
+            <h2 class="h-h2">合作院校撰写老师 Our Tream</h2>
+            <div class="m-shu">
+                撰写老师和审稿撰写团队均由正规杂志社内撰写及重点高校导师硕博团队组成
+            </div>
+            <ul class="school-list">
+                <li class="school">
+                    <img src="img/tongji.jpg" alt="">
+                    <div class="school-mask">同济大学</div>
+                <li class="school">
+                    <img src="img/wuhan.jpg" alt="">
+                    <div class="school-mask">武汉大学</div>
+                <li class="school">
+                    <img src="img/xiamen.jpg" alt="">
+                    <div class="school-mask">厦门大学</div>
+                </li>
+                <li class="school">
+                    <img src="img/paperpass.jpg" alt="">
+                    <div class="school-mask">PaperPass</div>
+                </li>
+                <li class="school">
+                    <img src="img/hunan.jpg" alt="">
+                    <div class="school-mask">湖南大学</div>
+                </li>
+                <li class="school">
+                    <img src="img/huadongshifan.jpg" alt="">
+                    <div class="school-mask">华东师范大学</div>
+                <li class="school"><img src="img/hunanshifan.jpg" alt="">
+                    <div class="school-mask">华南师范大学</div>
+                </li>
+                <li class="school">
+                    <img src="img/fudan.jpg" alt="">
+                    <div class="school-mask">复旦大学</div>
+                </li>
+                <li class="school">
+                    <img src="img/xianjiaotong.jpg" alt="">
+                    <div class="school-mask">西安交通大学</div>
+                </li>
+                <li class="school">
+                    <img src="img/zhejiang.jpg" alt="">
+                    <div class="school-mask">浙江大学</div>
+                </li>
+            </ul>
+        </section>
+    </div>
+</div>
+<div class="sever-list" id="sever">
+    <div class="sever-title">
+        <h1>Our severs 项目服务</h1>
+        <div style="width: 300px;height: 2px;background: #cccccc;margin: 20px auto;"></div>
+        <p class="about-small-title">九鼎文化传媒更加专注论文的品质与期刊发表</p>
+    </div>
+
+    <div class="wrapper">
+
+        <ul class="sever-pic">
+            <li>
+                <a href=""><img src="img/client5.png" alt=""></a>
+                <div>
+                    <a href="">
+                        <p>毕业论文撰写</p>
+                        <p>专科、本科、硕博essay撰写</p>
+                    </a>
+
+                    <div style="width: 50px;height: 2px;background: #cccccc;margin: 20px auto;"></div>
+                    <p class="about-small-title">211、985院校导师杂志社合作撰写保障论
+                        文指导的质量度并提供学术不端检测报告以及后期修改</p>
+                </div>
+            </li>
+            <li>
+                <a href=""><img src="img/client6.png" alt=""></a>
+                <div>
+                    <a href="">
+                        <p>修改润色</p>
+                        <p>论文修改指导，英语essay润色</p>
+                    </a>
+
+                    <div style="width: 50px;height: 2px;background: #cccccc;margin: 20px auto;"></div>
+                    <p class="about-small-title">从专业角度出发，分析研究导师修改意见
+                        以及检测报告完成论文修改和essay论文润色</p>
+                </div>
+            </li>
+            <li>
+                <a href=""><img src="img/client7.png" alt=""></a>
+                <div>
+                    <a href="">
+
+                        <p>职称发表</p>
+                        <p>教育职称发表期刊</p>
+                    </a>
+
+                    <div style="width: 50px;height: 2px;background: #cccccc;margin: 20px auto;"></div>
+                    <p class="about-small-title">一站式职称论文发表服务，正规期刊正规刊号，杂志社直接审稿发表，
+                        晋升职称发表期刊快速高效</p>
+                </div>
+            </li>
+            <li>
+
+                <a href=""><img src="img/client8.png" alt=""></a>
+                <div>
+                    <a href="">
+                        <p>期刊投稿</p>
+                        <p>期刊发表综合解决方案</p>
+                    </a>
+
+                    <div style="width: 50px;height: 2px;background: #cccccc;margin: 20px auto;"></div>
+                    <p class="about-small-title">各类期刊投稿发表一站式，省级、国家级、核心期刊全包含；
+                        省去投稿中间环节，保障发表成功率</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="kehu kehu-bg" id="connect">
+    <div class="wrapper">
+
+        <section class="container1 text-center">
+
+            <h2 class="h-h2"> 在线客服 contract online</h2>
+
+            <div class="m-shu">
+                <b style=" font-size:18px; text-align:center;">腾讯认证企业QQ洽谈★安全★保障★可靠</b>
+            </div>
+            <div class="firend-add">
+                <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=845315522&website=www.oicqzone.com">
+                    <img border="0" src="img/qqchatting.gif" alt="论文代写" title="论文代写">
+                </a>
+                <p>论文代写客服</p>
+                <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=845315522&website=www.oicqzone.com">
+                    <img border="0" src="img/qqchatting.gif" alt="论文代写" title="论文代写">
+                </a>
+                <p>论文发表客服</p>
+                <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=845315522&website=www.oicqzone.com">
+                    <img border="0" src="img/qqchatting.gif" alt="论文代写" title="论文代写">
+                </a>
+                <p>核心期刊客服</p>
+                <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=845315522&website=www.oicqzone.com">
+                    <img border="0" src="img/qqchatting.gif" alt="论文代写" title="论文代写">
+                </a>
+                <p>投诉建议客服</p>
+                <span style="background-color:#6699cc; color: #FFF; font-size:20px">
+            <b>官方服务电话</b>
+            ：158XXXXXXXX
+        </span>
+                <p></p>
+                <span style="background-color:#6699cc; color: #FFF; font-size:20px">
+            <b>论文代写客服认证QQ</b>
+            ：845315522
+        </span>
+                <p></p>
+                <span style="background-color:#6699cc; color: #FFF; font-size:20px">
+            <b>论文发表客服认证QQ</b>
+            ：845315522
+        </span>
+                <p></p>
+                <span style="background-color:#6699cc; color: #FFF; font-size:20px">
+            <b>核心期刊客服认证QQ</b>
+            ：845315522
+        </span>
+                <p></p>
+                <span style="background-color:#6699cc; color: #FFF; font-size:20px">
+            <b>投诉建议客服认证QQ</b>
+            ：845315522
+        </span>
+                <p></p>
+                <p style="padding-bottom:10px;"><b style="font-weight:bold"> ① </b>
+                    质量：高端品质，绝对原创　
+                    <b> ② </b>
+                    价格：公道合理，物有所值   　
+                    <b> ③ </b>
+                    期刊：所有刊物，均为权威
+                </p>
+                <p style="padding-bottom:10px;"><b style="font-weight:bold"> ④ </b>
+                    团队：行业精英，一线作者　
+                    <b> ⑤ </b>
+                    态度：认真负责，精益求精　
+                    <b> ⑥ </b>
+                    售后：免费修改，直到满意
+                </p>
+
+            </div>
+        </section>
+        </div>
+
+</div>
+<div class="footer" >
+    <div class="wrapper">
+        <div class="connect-data">
+            <div class="logo">
+                <p class="renzheng">
+                    <img src="img/logosmall.png" alt="">
+                    <img src="img/logosmall.png" alt="">
+                    <img src="img/logosmall.png" alt="">
+                    <img src="img/logosmall.png" alt="">
+                    <img src="img/logosmall.png" alt="">
+                    <img src="img/logosmall.png" alt="">
+                </p>
+            </div>
+            <div class="miaoshu">
+                <p>服务项目</p>
+                <p class="gn">
+                    <a href="">论文撰写.</a>
+                    <a href="">essay编译.</a>
+                    <a href="">论文发表.</a>
+                    <a href="">期刊投稿</a>
+                </p>
+            </div>
+        </div>
+        <div class="connect-data2">
+            <p>
+                合作申请： QQ:845315522
+            </p>
+            <p>
+                联系地址： XXXXXX
+            </p>
+            <p>
+                Copyright © 2017-2018 XXX版权
+
+            </p>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

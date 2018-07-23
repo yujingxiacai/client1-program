@@ -1,0 +1,58 @@
+.about-us{
+    /*height: 600px;*/
+    /*这里的高度固定死会让这个部分的元素下移窜位！！！*/
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+.about-us .about-title h1{
+    font-size: 24px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-weight:lighter;
+}
+
+.about-title  p {
+    text-align: center;
+    color: #999;
+
+}
+.about-us .main-about-us{
+text-indent: 2em;
+    color:  #595959;
+}
+ .sever-list{
+
+    background-image: url(img/client4.jpg);
+    width: 100%;
+    /*height: 600px;*/
+     background-repeat: no-repeat;
+     background-size: cover;
+     color: #fff;
+     overflow: hidden;
+
+}
+ .sever-list .sever-title h1{
+   margin-top: 50px;
+     text-align: center;
+
+ }
+ .sever-title p{
+     text-align: center;
+ }
+
+ .sever-list  li{
+     text-align: center;
+     margin: 0 50px;
+     float: left;
+     width: 160px;
+ }
+.sever-list .sever-pic a{
+    color: #f2f2f2;
+}
+ .sever-list .sever-pic img{
+     vertical-align:middle;
+ }
+.sever-list  li div{
+margin-left: 30px;
+}

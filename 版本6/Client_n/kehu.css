@@ -1,0 +1,96 @@
+.fuwu-bg, .kehu-bg, .team-bg {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover
+}
+.kehu .m-shu{
+color: #999;
+margin-bottom: 45px;
+}
+.kehu {
+    padding: 45px 0 25px 0;
+}
+.container1 {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.text-center {
+    text-align: center;
+}
+.kehu-bg {
+    background-image: url("img/kehu-bg.jpg");
+}
+.h-h2 {
+    font-size: 24px;
+    line-height: 150%;
+    color: #000;
+    background-image: url("img/t-xian.gif");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    padding-bottom: 22px;
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 26px
+
+}
+.kehu  .m-shu{
+    color: #999;
+    margin-bottom: 45px;
+}
+.h-h2{
+    text-align: center;
+
+}
+.m-shu{
+    text-align: center;
+}
+.univeristy li{
+    float: left;
+
+}
+
+.school img{
+    width: 204px;
+    height: 117px;
+    position: relative;
+
+}
+.school-list .school:hover .school-mask{
+    opacity: 1;
+}
+
+.school-list .school-mask{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #69c;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease;
+    -moz-transition: opacity 0.3s ease;
+    -ms-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    line-height: 117px;
+
+    color: #FFFFFF;
+}
+.school-list li{
+    float: left;
+    margin: 16px;
+    width: 204px;
+    height: 117px;
+    position: relative;
+    cursor: pointer;
+}
+.our-team{
+
+    height: 530px;
+}
